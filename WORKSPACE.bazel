@@ -58,7 +58,7 @@ maven_install(
 
         "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0",
         "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0",
-        "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0",
+        "androidx.lifecycle:lifecycle-viewmodel-compose:2.5.0",
 
         #"androidx.navigation:navigation-compose:1.0.0-alpha10", # try alpha10?
 
