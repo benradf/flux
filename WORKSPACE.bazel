@@ -29,68 +29,73 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "androidx.activity:activity-compose:1.3.0-alpha04",
-        "androidx.appcompat:appcompat:1.0.0",
-        "androidx.appcompat:appcompat:1.3.0-beta01",
-        "androidx.compose.animation:animation-core:1.0.0-beta02",
-        "androidx.compose.animation:animation:1.0.0-beta02",
-        "androidx.compose.foundation:foundation-layout:1.0.0-beta02",
-        "androidx.compose.foundation:foundation:1.0.0-beta02",
+        "androidx.activity:activity-compose:VERSION",
 
-        "androidx.compose.material:material-icons-core:1.0.0-beta02",
+        "androidx.appcompat:appcompat:VERSION",
 
-        "androidx.compose.material:material-icons-extended:1.0.0-beta02",
-        "androidx.compose.material:material:1.0.0-beta02",
-        "androidx.compose.runtime:runtime:1.0.0-beta02",
+        "androidx.compose.animation:animation-core:VERSION",
+        "androidx.compose.animation:animation:VERSION",
+        "androidx.compose.foundation:foundation-layout:VERSION",
+        "androidx.compose.foundation:foundation:VERSION",
+        "androidx.compose.material:material-icons-core:VERSION",
+        "androidx.compose.material:material-icons-extended:VERSION",
+        "androidx.compose.material:material:VERSION",
+        "androidx.compose.runtime:runtime:VERSION",
+        "androidx.compose.ui:ui-geometry:VERSION",
+        "androidx.compose.ui:ui-graphics:VERSION",
+        "androidx.compose.ui:ui-text:VERSION",
+        "androidx.compose.ui:ui-tooling:VERSION",
+        "androidx.compose.ui:ui-unit:VERSION",
+        "androidx.compose.ui:ui-util:VERSION",
+        "androidx.compose.ui:ui:VERSION",
 
-        "androidx.compose.ui:ui-unit:1.0.0-beta02",
-        "androidx.compose.ui:ui-geometry:1.0.0-beta02",
-        "androidx.compose.ui:ui-graphics:1.0.0-beta02",
-        "androidx.compose.ui:ui-text:1.0.0-beta02",
+        "androidx.constraintlayout:constraintlayout-compose:VERSION",
 
-        "androidx.compose.ui:ui-tooling:1.0.0-beta02",
-        "androidx.compose.ui:ui-util:1.0.0-beta02",
-        "androidx.compose.ui:ui:1.0.0-beta02",
-        "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha03",
-        "androidx.core:core:1.5.0-beta01",
-        "androidx.core:core-ktx:1.5.0-beta01",
-        "androidx.hilt:hilt-navigation-compose:1.0.0-alpha01",
+        "androidx.core:core-ktx:VERSION",
+        "androidx.core:core:VERSION",
 
-        "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1",
+        "androidx.hilt:hilt-navigation-compose:VERSION",
 
-        "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0",
-        "androidx.navigation:navigation-compose:1.0.0-alpha09",
-        "androidx.test.espresso:espresso-core:3.1.1",
-        "com.google.android.material:material:1.3.0",
-        "com.google.auto.value:auto-value-annotations:1.6.5",
-        "com.google.auto.value:auto-value:1.6.5",
-        "com.google.dagger:dagger-compiler:2.45",
-        "com.google.dagger:dagger-producers:2.45",
-        "com.google.dagger:dagger:2.45",
-        "com.google.dagger:hilt-android:2.33-beta",
-        "com.squareup.moshi:moshi-kotlin-codegen:1.14.0",
-        "com.squareup.moshi:moshi-kotlin:1.14.0",
-        "com.squareup.moshi:moshi:1.14.0",
-        "dev.chrisbanes.accompanist:accompanist-coil:0.6.0",
-        "dev.chrisbanes.accompanist:accompanist-insets:0.6.0",
-        "junit:junit:4.12",
-        "org.hamcrest:hamcrest-library:1.3",
-        "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.4.31",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2",
-        "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2",
-        "org.jetbrains.kotlinx:kotlinx-serialization-runtime:1.0-M1-1.4.0-rc",
-        "org.robolectric:robolectric:4.8.1",
+        "androidx.lifecycle:lifecycle-runtime-ktx:VERSION",
+        "androidx.lifecycle:lifecycle-viewmodel-compose:VERSION",
+
+        "androidx.navigation:navigation-compose:VERSION",
+
+        "androidx.test.espresso:espresso-core:VERSION",
+
+        "com.google.android.material:material:VERSION",
+
+        "com.google.auto.value:auto-value-annotations:VERSION",
+        "com.google.auto.value:auto-value:VERSION",
+
+        "com.google.dagger:dagger-compiler:VERSION",
+        "com.google.dagger:dagger-producers:VERSION",
+        "com.google.dagger:dagger:VERSION",
+        "com.google.dagger:hilt-android:VERSION",
+
+        "com.squareup.moshi:moshi-kotlin-codegen:VERSION",
+        "com.squareup.moshi:moshi-kotlin:VERSION",
+        "com.squareup.moshi:moshi:VERSION",
+
+        "dev.chrisbanes.accompanist:accompanist-coil:VERSION",
+        "dev.chrisbanes.accompanist:accompanist-insets:VERSION",
+
+        "junit:junit:VERSION",
+
+        "org.hamcrest:hamcrest-library:VERSION",
+
+        "org.jetbrains.kotlin:kotlin-stdlib-jdk8:VERSION",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:VERSION",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-core:VERSION",
+        "org.jetbrains.kotlinx:kotlinx-serialization-runtime:VERSION",
+
+        "org.robolectric:robolectric:VERSION",
     ],
     repositories = [
         "https://maven.google.com",
         "https://repo1.maven.org/maven2",
     ],
 )
-
-
-#     27 Error in fail: Error while fetching artifact with coursier: Resolution error: Conflicting dependencies:
-#     28 androidx.compose.runtime:runtime:1.0.0-beta01 or 1.0.0-beta02 or 1.0.1 or [1.0.0-beta02] wanted by
-
 
 
 http_archive(
