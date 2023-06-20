@@ -29,41 +29,42 @@ load("@rules_jvm_external//:defs.bzl", "maven_install")
 
 maven_install(
     artifacts = [
-        "androidx.activity:activity-compose:VERSION",
+        "androidx.activity:activity-compose:1.3.0",
 
-        "androidx.appcompat:appcompat:VERSION",
+        "androidx.appcompat:appcompat:1.3.0",
 
-        "androidx.compose.animation:animation-core:VERSION",
-        "androidx.compose.animation:animation:VERSION",
-        "androidx.compose.foundation:foundation-layout:VERSION",
-        "androidx.compose.foundation:foundation:VERSION",
-        "androidx.compose.material:material-icons-core:VERSION",
-        "androidx.compose.material:material-icons-extended:VERSION",
-        "androidx.compose.material:material:VERSION",
-        "androidx.compose.runtime:runtime:VERSION",
-        "androidx.compose.ui:ui-geometry:VERSION",
-        "androidx.compose.ui:ui-graphics:VERSION",
-        "androidx.compose.ui:ui-text:VERSION",
-        "androidx.compose.ui:ui-tooling:VERSION",
-        "androidx.compose.ui:ui-unit:VERSION",
-        "androidx.compose.ui:ui-util:VERSION",
-        "androidx.compose.ui:ui:VERSION",
+        "androidx.compose.animation:animation-core:1.0.0",
+        "androidx.compose.animation:animation:1.0.0",
+        "androidx.compose.foundation:foundation-layout:1.0.0",
+        "androidx.compose.foundation:foundation:1.0.0",
+        "androidx.compose.material:material-icons-core:1.0.0",
+        "androidx.compose.material:material-icons-extended:1.0.0",
+        "androidx.compose.material:material:1.0.0",
+        "androidx.compose.runtime:runtime:1.0.0",
+        "androidx.compose.ui:ui-geometry:1.0.0",
+        "androidx.compose.ui:ui-graphics:1.0.0",
+        "androidx.compose.ui:ui-text:1.0.0",
+        "androidx.compose.ui:ui-tooling:1.0.0",
+        "androidx.compose.ui:ui-unit:1.0.0",
+        "androidx.compose.ui:ui-util:1.0.0",
+        "androidx.compose.ui:ui:1.0.0",
 
-        "androidx.constraintlayout:constraintlayout-compose:VERSION",
+        "androidx.constraintlayout:constraintlayout-compose:1.0.0",
 
-        "androidx.core:core-ktx:VERSION",
-        "androidx.core:core:VERSION",
+        "androidx.core:core-ktx:1.5.0",
+        "androidx.core:core:1.5.0",
 
-        "androidx.hilt:hilt-navigation-compose:VERSION",
+        #"androidx.hilt:hilt-navigation-compose:1.0.0",
 
-        "androidx.lifecycle:lifecycle-runtime-ktx:VERSION", # formerly 2.3.0
-        "androidx.lifecycle:lifecycle-viewmodel-compose:VERSION",
+        "androidx.lifecycle:lifecycle-runtime-ktx:2.3.0",
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0",
+        "androidx.lifecycle:lifecycle-viewmodel-compose:2.4.0",
 
-        "androidx.navigation:navigation-compose:VERSION",
+        #"androidx.navigation:navigation-compose:1.0.0-alpha10", # try alpha10?
 
-        "androidx.test.espresso:espresso-core:VERSION",
+        "androidx.test.espresso:espresso-core:3.3.0",
 
-        "com.google.android.material:material:VERSION",
+        "com.google.android.material:material:1.3.0",
 
         #"com.google.auto.value:auto-value-annotations:VERSION",
         #"com.google.auto.value:auto-value:VERSION",
@@ -77,10 +78,10 @@ maven_install(
         #"com.squareup.moshi:moshi-kotlin:VERSION",
         #"com.squareup.moshi:moshi:VERSION",
 
-        "dev.chrisbanes.accompanist:accompanist-coil:VERSION",
-        "dev.chrisbanes.accompanist:accompanist-insets:VERSION",
+        "dev.chrisbanes.accompanist:accompanist-coil:0.6.0",
+        "dev.chrisbanes.accompanist:accompanist-insets:0.6.0",
 
-        #"junit:junit:VERSION",
+        #"junit:junit:4.13.2",
 
         #"org.hamcrest:hamcrest-library:VERSION",
 

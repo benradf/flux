@@ -26,12 +26,12 @@ ALL_MAVEN_DEPS = [
     "@maven//:androidx_constraintlayout_constraintlayout_compose",
     "@maven//:androidx_core_core",
     "@maven//:androidx_core_core_ktx",
-    "@maven//:androidx_hilt_hilt_navigation_compose",
+    #"@maven//:androidx_hilt_hilt_navigation_compose",
 
     "@maven//:androidx_lifecycle_lifecycle_viewmodel_compose",
 
     "@maven//:androidx_lifecycle_lifecycle_runtime_ktx",
-    "@maven//:androidx_navigation_navigation_compose",
+    #"@maven//:androidx_navigation_navigation_compose",
     "@maven//:androidx_test_espresso_espresso_core",
     "@maven//:com_google_android_material_material",
     "@maven//:com_google_auto_value_auto_value",
