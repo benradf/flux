@@ -1,9 +1,11 @@
 load("@io_bazel_rules_kotlin//kotlin:android.bzl", "kt_android_library")
 
+load("//bazel:defs.bzl", "ALL_MAVEN_DEPS")
+
 kt_android_library(
     name = "app",
     srcs = glob(["src/main/java/**/*.kt"]),
-    deps = [
+    deps = ALL_MAVEN_DEPS + [
         "//presentation:presentation",
         "//domain:domain",
         "//data:data",

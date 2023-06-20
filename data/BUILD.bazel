@@ -1,9 +1,11 @@
 load("@io_bazel_rules_kotlin//kotlin:android.bzl", "kt_android_library")
 
+load("//bazel:defs.bzl", "ALL_MAVEN_DEPS")
+
 kt_android_library(
     name = "data",
     srcs = glob(["src/main/java/**/*.kt"]),
-    deps = ["//domain:domain"],
+    deps = ALL_MAVEN_DEPS + ["//domain:domain"],
     custom_package = "com.fidloo.flux.data",
     manifest = "src/main/AndroidManifest.xml",
     plugins = [],
