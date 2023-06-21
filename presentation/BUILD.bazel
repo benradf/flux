@@ -1,0 +1,19 @@
+load("@io_bazel_rules_kotlin//kotlin:android.bzl", "kt_android_library")
+
+load("//bazel:defs.bzl", "ALL_MAVEN_DEPS")
+
+kt_android_library(
+    name = "presentation",
+    srcs = glob(["src/main/java/**/*.kt"]),
+    deps = ALL_MAVEN_DEPS + ["//domain:domain"],
+    custom_package = "com.fidloo.flux.presentation",
+    manifest = "src/main/AndroidManifest.xml",
+    plugins = [],
+    resource_files = glob(["src/main/res/**"]),
+    visibility = ["//visibility:public"],
+)
+
+
+
+# "@maven//:com_squareup_moshi_moshi"
+#          "com.squareup.moshi:moshi:1.14.0"

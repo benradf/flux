@@ -1,0 +1,118 @@
+workspace(name = "flux")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+rules_kotlin_version = "1.7.1"
+rules_kotlin_sha = "fd92a98bd8a8f0e1cdcb490b93f5acef1f1727ed992571232d33de42395ca9b3"
+http_archive(
+    name = "io_bazel_rules_kotlin",
+    urls = ["https://github.com/bazelbuild/rules_kotlin/releases/download/v%s/rules_kotlin_release.tgz" % rules_kotlin_version],
+    sha256 = rules_kotlin_sha,
+)
+
+load("@io_bazel_rules_kotlin//kotlin:repositories.bzl", "kotlin_repositories", "versions")
+kotlin_repositories() # if you want the default. Otherwise see custom kotlinc distribution below
+
+load("@io_bazel_rules_kotlin//kotlin:core.bzl", "kt_register_toolchains")
+#kt_register_toolchains() # to use the default toolchain, otherwise see toolchains below
+register_toolchains("//bazel:experimental_toolchain")
+
+
+http_archive(
+    name = "rules_jvm_external",
+    sha256 = versions.RULES_JVM_EXTERNAL_SHA,
+    strip_prefix = "rules_jvm_external-%s" % versions.RULES_JVM_EXTERNAL_TAG,
+    url = "https://github.com/bazelbuild/rules_jvm_external/archive/%s.zip" % versions.RULES_JVM_EXTERNAL_TAG,
+)
+
+load("@rules_jvm_external//:defs.bzl", "maven_install")
+
+maven_install(
+    artifacts = [
+        "androidx.activity:activity-compose:1.7.2",
+
+        "androidx.appcompat:appcompat:1.7.0-alpha02",
+
+        "androidx.compose.animation:animation-core:1.4.3",
+        "androidx.compose.animation:animation:1.4.3",
+
+        "androidx.compose.foundation:foundation-layout:1.4.2",
+        "androidx.compose.foundation:foundation:1.4.2",
+
+        "androidx.compose.material:material-icons-core:1.4.3",
+        "androidx.compose.material:material-icons-extended:1.4.3",
+        "androidx.compose.material:material:1.4.3",
+
+        "androidx.compose.runtime:runtime:1.4.3",
+
+        "androidx.compose.ui:ui-geometry:1.4.3",
+        "androidx.compose.ui:ui-graphics:1.4.3",
+        "androidx.compose.ui:ui-text:1.4.3",
+        "androidx.compose.ui:ui-tooling:1.4.3",
+        "androidx.compose.ui:ui-unit:1.4.3",
+        "androidx.compose.ui:ui-util:1.4.3",
+        "androidx.compose.ui:ui:1.4.3",
+
+        "androidx.constraintlayout:constraintlayout-compose:1.1.0-alpha10",
+
+        "androidx.core:core-ktx:1.10.1",
+        "androidx.core:core:1.10.1",
+
+        #"androidx.hilt:hilt-navigation-compose:VERSION",
+
+        "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1",
+        "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1",
+        "androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1",
+
+        #"androidx.navigation:navigation-compose:VERSION", # try alpha10?
+
+        #"androidx.test.espresso:espresso-core:3.5.1",
+
+        "com.google.android.material:material:1.9.0",
+
+        #"com.google.auto.value:auto-value-annotations:VERSION",
+        #"com.google.auto.value:auto-value:VERSION",
+
+        #"com.google.dagger:dagger-compiler:VERSION",
+        #"com.google.dagger:dagger-producers:VERSION",
+        #"com.google.dagger:dagger:VERSION",
+        #"com.google.dagger:hilt-android:VERSION",
+
+        #"com.squareup.moshi:moshi-kotlin-codegen:VERSION",
+        #"com.squareup.moshi:moshi-kotlin:VERSION",
+        #"com.squareup.moshi:moshi:VERSION",
+
+        #"dev.chrisbanes.accompanist:accompanist-coil:VERSION",
+        #"dev.chrisbanes.accompanist:accompanist-insets:VERSION",
+
+        #"junit:junit:VERSION",
+
+        #"org.hamcrest:hamcrest-library:VERSION",
+
+        #"org.jetbrains.kotlin:kotlin-stdlib-jdk8:VERSION",
+        #"org.jetbrains.kotlinx:kotlinx-coroutines-android:VERSION",
+        #"org.jetbrains.kotlinx:kotlinx-coroutines-core:VERSION",
+        #"org.jetbrains.kotlinx:kotlinx-serialization-runtime:VERSION",
+
+        #"org.robolectric:robolectric:VERSION",
+    ],
+    repositories = [
+        "https://maven.google.com",
+        "https://repo1.maven.org/maven2",
+    ],
+)
+
+
+http_archive(
+    name = "build_bazel_rules_android",
+    sha256 = versions.ANDROID.SHA,
+    strip_prefix = "rules_android-%s" % versions.ANDROID.VERSION,
+    urls = ["https://github.com/bazelbuild/rules_android/archive/v%s.zip" % versions.ANDROID.VERSION],
+)
+
+load(
+    "@build_bazel_rules_android//android:rules.bzl",
+    "android_sdk_repository",
+)
+
+android_sdk_repository(name = "androidsdk")

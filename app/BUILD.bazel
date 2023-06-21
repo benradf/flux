@@ -1,0 +1,35 @@
+load("@io_bazel_rules_kotlin//kotlin:android.bzl", "kt_android_library")
+
+load("//bazel:defs.bzl", "ALL_MAVEN_DEPS")
+
+kt_android_library(
+    name = "app",
+    srcs = glob(["src/main/java/**/*.kt"]),
+    deps = ALL_MAVEN_DEPS + [
+        "//presentation:presentation",
+        "//domain:domain",
+        "//data:data",
+    ],
+    custom_package = "com.fidloo.flux.app",
+    manifest = "src/main/AndroidManifest.xml",
+    plugins = [],
+    resource_files = glob(["src/main/res/**"]),
+    visibility = ["//visibility:public"],
+)
+
+android_binary(
+    name = "apk",
+    custom_package = "com.fidloo.flux.app",
+    incremental_dexing = 1,
+    manifest = "src/main/AndroidManifest.xml",
+    manifest_values = {
+        #"lib_name": "lib",
+    },
+    multidex = "native",
+    deps = [
+        "//app:app",
+        "//presentation:presentation",
+        "//domain:domain",
+        "//data:data",
+    ],
+)
